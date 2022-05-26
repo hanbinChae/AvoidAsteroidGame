@@ -62,7 +62,7 @@ def collision_check(loc_rock,size_rock,loc_ship,size_ship):
         print("\n"*10)
         print("-"*48,"+")
         print(" "*48,"|")
-        print(f"게임 종료!! 도지로켓이 생존한 시간 : {time_diff[:4]} 초     |")
+        print(f"소행성 충돌!! 도지로켓이 생존한 시간 : {time_diff[:4]} 초   |")
         print(" "*48,"|")
         print("-"*48,"+\n")
         pygame.quit() # pygame 종료
@@ -74,7 +74,7 @@ while True:
 
     #소행성 표시
     for i in range(len(loc_rock)):
-        pygame.draw.circle(screen, (0,255,0), loc_rock[i], size_rock,2)
+        pygame.draw.circle(screen, 	(234, 215, 42), loc_rock[i], size_rock,2)
         x = loc_rock[i][0] - imgater_width/2
         y = loc_rock[i][1] - imgater_height/2
         screen.blit(imgasteroid,(x,y))
