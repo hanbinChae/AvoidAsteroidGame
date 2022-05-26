@@ -1,7 +1,8 @@
-from lib2to3.pgen2.token import STAR
+
 import pygame
 import sys # 파이썬 인터프리터 제어
 import time
+import random
 
 #로켓 이미지와 길이, 높이 불러오기
 imgShuttle = pygame.image.load("DogeRocket.png")
@@ -25,12 +26,6 @@ screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 myFont = pygame.font.SysFont("arial", 30, True, False)
 clock = pygame.time.Clock()
 
-#속도 지정
-vel=[[5,5],
-    [5,-5],
-    [-5,-5],
-    [-5,5],
-    [4,-4]]
 
 #소행성 5개 생성
 loc_rock = [[100,100],
@@ -40,6 +35,13 @@ loc_rock = [[100,100],
             [500,300]]
 rocks_list = []
 size_rock = 20
+
+#속도 지정
+vel=[[5,5],
+    [5,-5],
+    [-5,-5],
+    [-5,5],
+    [4,-4]]
 
 #도지 우주선 생성
 loc_ship = [SCREEN_WIDTH/2,SCREEN_HEIGHT/2]
@@ -60,9 +62,9 @@ def collision_check(loc_rock,size_rock,loc_ship,size_ship):
         print("\n"*10)
         print("-"*48,"+")
         print(" "*48,"|")
-        print(f"게임 종료!! 도지로켓이 생존한 시간 : [{time_diff[:4]}]초    |")
+        print(f"게임 종료!! 도지로켓이 생존한 시간 : {time_diff[:4]} 초     |")
         print(" "*48,"|")
-        print("-"*48,"+")
+        print("-"*48,"+\n")
         pygame.quit() # pygame 종료
         sys.exit()
         
@@ -121,10 +123,10 @@ while True:
         #소행성 충돌 시
         collision_check(loc_rock[i], size_rock, loc_ship, size_ship)
 
-    # 게임 진행 시간 표시
-    time_diff = str(time.time()-START_TIME)
-    currentTime_text = myFont.render(time_diff[:4],1,(255,255,255))
-    screen.blit(currentTime_text, [SCREEN_WIDTH-70,20])
+        # 게임 진행 시간 표시
+        time_diff = str(time.time()-START_TIME)
+        currentTime_text = myFont.render(time_diff[:4],1,(255,255,255))
+        screen.blit(currentTime_text, [SCREEN_WIDTH-70,20])
 
     #도지 우주선
     pygame.draw.circle(screen,(255,255,255),loc_ship, size_ship,1)
