@@ -19,7 +19,7 @@ SCREEN_HEIGHT = 480
 START_TIME = time.time()
 
 pygame.init()
-pygame.display.set_caption("SpaceShuttle") # 창 제목 설정
+pygame.display.set_caption("DogeCoin Avoidance Game") # 창 제목 설정
 
 #지정한 크기의 창 생성
 screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
