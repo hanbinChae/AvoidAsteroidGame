@@ -57,7 +57,12 @@ def collision_check(loc_rock,size_rock,loc_ship,size_ship):
     if dist < (size_rock + size_ship):
         collision_text = myFont.render("Collision!", 1, (255,0,0))
         screen.blit(collision_text, [20,20])
-        print(f"게임 종료!! 도지로켓이 생존한 시간 : {time_diff[:4]}초")
+        print("\n"*10)
+        print("-"*48,"+")
+        print(" "*48,"|")
+        print(f"게임 종료!! 도지로켓이 생존한 시간 : [{time_diff[:4]}]초    |")
+        print(" "*48,"|")
+        print("-"*48,"+")
         pygame.quit() # pygame 종료
         sys.exit()
         
