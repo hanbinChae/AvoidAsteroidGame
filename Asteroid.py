@@ -1,7 +1,6 @@
 import pygame
 import sys # 파이썬 인터프리터 제어
 import time
-import random
 
 #로켓 이미지와 길이, 높이 불러오기
 imgShuttle = pygame.image.load("DogeRocket.png")
