@@ -1,4 +1,3 @@
-
 import pygame
 import sys # 파이썬 인터프리터 제어
 import time
@@ -13,6 +12,7 @@ img_height = imgShuttle.get_height()
 imgasteroid = pygame.image.load("DogeCoin.png")
 imgater_width = imgasteroid.get_width()
 imgater_height = imgasteroid.get_height()
+
 #스크린 사이즈와 측정을 위한 시작 시간 생성
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 480
@@ -25,7 +25,6 @@ pygame.display.set_caption("DogeCoin Avoidance Game") # 창 제목 설정
 screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 myFont = pygame.font.SysFont("arial", 30, True, False)
 clock = pygame.time.Clock()
-
 
 #소행성 5개 생성
 loc_rock = [[100,100],
