@@ -1,4 +1,4 @@
-import pygame
+import pygame #파이게임 패키지 불러오기
 import sys # 파이썬 인터프리터 제어
 import time
 
